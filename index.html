@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Тест на политические координаты</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="root">
+            <header class="header">Тест на политические координаты пройти онлайн</header>
+            <ul class="left">
+                <ad
+                    v-for="ad in ads.slice(0,3)"
+                    v-bind:ad="ad"
+                    v-bind:key="ad.id"
+                ></ad>
+            </ul>
+            <div class="test">
+                <div class="question-container">
+                    <h3> {{questions[i].text }} </h3>
+                    <form>
+                        <p v-for="variant in questions[i].variants">
+                            <input type="radio" name="choise"> {{ variant }}
+                        </p>
+                        <button id="questionChanger" v-on:click="changeQuestion">Принять</button>
+                    </form>
+                </div>
+            </div>
+            <div id="levak" class="levak">
+                <h1>Поздравляем!</h1>
+                <p>Вы - левак!</p>
+            </div>
+
+            <ul class="right">
+                <ad
+                    v-for="ad in ads.slice(3,6)"
+                    v-bind:ad="ad"
+                    v-bind:key="ad.id"
+                ></ad>
+            </ul>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</html>
